@@ -1,0 +1,11 @@
+# Binaries
+/stringkit
+/cmd/stringkit/stringkit
+*.exe
+
+# Test/coverage output
+*.out
+coverage.*
+
+# OS cruft
+.DS_Store
