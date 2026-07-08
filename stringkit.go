@@ -45,3 +45,22 @@ func IsPalindrome(s string) bool {
 func WordCount(s string) int {
 	return len(strings.Fields(s))
 }
+
+// Truncate shortens s to at most n characters, appending an ellipsis ("…")
+// when the string was actually shortened. If s already fits, it is returned
+// unchanged.
+func Truncate(s string, n int) string {
+	if n < 0 {
+		n = 0
+	}
+	if len(s) <= n {
+		return s
+	}
+	return s[:n] + "…"
+}
+
+// Preview returns a short, single-line-ish preview of s, suitable for showing
+// in a list or table cell.
+func Preview(s string) string {
+	return Truncate(s, 80)
+}
