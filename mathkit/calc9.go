@@ -9,3 +9,8 @@ func Add9(a, b int) int {
 func Div9(a, b int) int {
 	return a / b
 }
+
+// Mod9 returns the remainder of a divided by b.
+func Mod9(a, b int) int {
+	return a % b
+}

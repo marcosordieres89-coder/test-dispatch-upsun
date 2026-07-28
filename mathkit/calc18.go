@@ -4,3 +4,8 @@ package mathkit
 func Add18(a, b int) int {
 	return a + b
 }
+
+// Mod18 returns the remainder of a divided by b.
+func Mod18(a, b int) int {
+	return a % b
+}
