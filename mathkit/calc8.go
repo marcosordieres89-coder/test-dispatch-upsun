@@ -4,3 +4,8 @@ package mathkit
 func Add8(a, b int) int {
 	return a + b
 }
+
+// Div8 divides a by b.
+func Div8(a, b int) int {
+	return a / b
+}
