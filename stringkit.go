@@ -45,3 +45,16 @@ func IsPalindrome(s string) bool {
 func WordCount(s string) int {
 	return len(strings.Fields(s))
 }
+
+// Truncate returns s cut to at most n runes, with "…" appended when anything
+// was removed. A negative n is treated as 0.
+func Truncate(s string, n int) string {
+	if n < 0 {
+		n = 0
+	}
+	runes := []rune(s)
+	if len(runes) <= n {
+		return s
+	}
+	return string(runes[:n]) + "…"
+}
