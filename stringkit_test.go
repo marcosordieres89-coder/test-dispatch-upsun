@@ -65,3 +65,26 @@ func TestWordCount(t *testing.T) {
 		})
 	}
 }
+
+func TestTruncate(t *testing.T) {
+	tests := []struct {
+		name string
+		in   string
+		n    int
+		want string
+	}{
+		{"shorter", "hi", 5, "hi"},
+		{"exact", "hello", 5, "hello"},
+		{"cut", "hello world", 5, "hello…"},
+		{"multibyte", "日本語です", 2, "日本…"},
+		{"zero", "abc", 0, "…"},
+		{"negative", "abc", -1, "…"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := Truncate(tt.in, tt.n); got != tt.want {
+				t.Errorf("Truncate(%q, %d) = %q, want %q", tt.in, tt.n, got, tt.want)
+			}
+		})
+	}
+}
