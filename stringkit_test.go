@@ -65,3 +65,12 @@ func TestWordCount(t *testing.T) {
 		})
 	}
 }
+
+func TestCapitalize(t *testing.T) {
+	cases := map[string]string{"": "", "go": "Go", "Go": "Go", "élan": "Élan", "a b": "A b"}
+	for in, want := range cases {
+		if got := Capitalize(in); got != want {
+			t.Errorf("Capitalize(%q) = %q, want %q", in, got, want)
+		}
+	}
+}
