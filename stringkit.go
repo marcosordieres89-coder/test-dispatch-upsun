@@ -45,3 +45,11 @@ func IsPalindrome(s string) bool {
 func WordCount(s string) int {
 	return len(strings.Fields(s))
 }
+
+// Capitalize returns s with its first rune in upper case and the rest unchanged.
+func Capitalize(s string) string {
+	for i, r := range s {
+		return string(unicode.ToUpper(r)) + s[i+len(string(r)):]
+	}
+	return s
+}
